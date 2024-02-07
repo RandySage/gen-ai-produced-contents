@@ -6,14 +6,9 @@ handle_signal() {
 }
 
 # Trap signals and specify the corresponding handler
-trap 'handle_signal HUP' HUP
-trap 'handle_signal INT' INT
-trap 'handle_signal QUIT' QUIT
-trap 'handle_signal ABRT' ABRT
-trap 'handle_signal KILL' KILL
-trap 'handle_signal ALRM' ALRM
-trap 'handle_signal TERM' TERM
-# Add more traps for other signals as needed
+for n in $(seq 1 31) ; do
+  trap "handle_signal $n" $n
+done
 
 # Keep script running to catch signals
 echo "Script running with PID $$"
