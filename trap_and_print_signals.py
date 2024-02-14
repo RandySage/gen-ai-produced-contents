@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+
+import os
 import signal
 import sys
 
@@ -24,7 +27,7 @@ def setup_signal_handlers():
 def main():
     """Implement script functionality."""
     setup_signal_handlers()
-    print(f"Running... (PID: {sys.getpid()})")
+    print(f"Running... (PID: {os.getpid()})")
     print(f"Log file: {log_file_path}")
     # Keep the program running to catch signals
     while True:
