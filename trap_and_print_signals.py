@@ -18,7 +18,7 @@ def signal_handler(signum, frame):
 def setup_signal_handlers():
     """Set up signal handlers."""
     # List of signals to catch
-    signals_to_catch = [signal.SIGINT, signal.SIGTERM, signal.SIGUSR1]
+    signals_to_catch = [signal.SIGHUP, signal.SIGINT, signal.SIGTERM]
 
     for sig in signals_to_catch:
         signal.signal(sig, signal_handler)
